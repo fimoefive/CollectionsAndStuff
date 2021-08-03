@@ -118,18 +118,18 @@ namespace CollectionsAndStuff
             }
 
 
-
             // Hashset<T>
             // Like a list in that they store a value at an index
             // Like a dictionary in that the value has to be unique
             // Completly different in that it eliminates non-unique stuff without errors
             // pretty slow at adding data
             // super fast getting data out, comparing data
+            // uses Hashcodes to figure out uniqueness
             //var jamekasName = "Jameka";
             //jamekasName.GetHashCode();
 
             var uniqueNames = new HashSet<string>();
-            uniqueNames.Add("jameka");
+            uniqueNames.Add("Jameka");
             uniqueNames.Add("Dylan");
 
             uniqueNames.Remove("Dylan");
@@ -139,8 +139,10 @@ namespace CollectionsAndStuff
                 Console.WriteLine($"{name} is unique");
             }
 
-            //Queue<T>
-            //FIFO based collection
+
+            // Queue<T>
+            // FIFO based collection
+            // Things that have to be done in order
 
             var queue = new Queue<int>();
             queue.Enqueue(3);
@@ -156,7 +158,24 @@ namespace CollectionsAndStuff
                 Console.WriteLine($"dequeuing  {queue.Dequeue()}");
             }
 
+            // Stack<T>
+            // LIFO based collection
+            // things done in order, but with a bias towards recency
 
+            var stack = new Stack<int>();
+
+            stack.Push(2);
+            stack.Push(5);
+            stack.Push(12);
+            stack.Push(24);
+            stack.Push(23);
+            stack.Push(200);
+            stack.Push(2231);
+
+            while(stack.Count > 0)
+            {
+                Console.WriteLine($"popping {stack.Pop()}");
+            }
 
         }
     }
